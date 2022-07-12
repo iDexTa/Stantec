@@ -23,7 +23,7 @@
             <option value="Occupation">Occupation</option>
         </select>
         </div>
-        <input spellcheck="true" id="searchBarID" type="text" placeholder="Search...." name="searchString" runat="server" value=@Model.SearchString>
+        <input spellcheck="true" id="searchBarID" type="text" placeholder="Search...." name="searchString" runat="server">
     </div>
     <div class="submitBtn">
         <input id="submitBtn" type="submit" value="Search">
@@ -96,6 +96,8 @@
     autocomplete(document.getElementById("searchBarID"), jsAutoCompleteArray);
     var searchColumn = String("@Model.SearchColumn");
     AutoSelectDropDown("searchColumn", searchColumn);
+    var searchValue = String("@Model.SearchString");
+    document.getElementById("searchBarID").value = searchValue;
 
 $(document).ready(function(){
         $('#people-table').before('<div id="nav"></div>');
