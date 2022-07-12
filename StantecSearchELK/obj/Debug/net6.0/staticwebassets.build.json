@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "br8cD3l7BbmIcW36Ddor3P3PyxXmWJ+4NacB2eIHzn4=",
+  "Source": "StantecSearchELK",
+  "BasePath": "_content/StantecSearchELK",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

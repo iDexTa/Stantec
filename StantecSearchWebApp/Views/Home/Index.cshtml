@@ -1,0 +1,123 @@
+﻿@model StantecSearchWebApp.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true">
+<script src="~/js/index.js" asp-append-version="true"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<h1>
+    Search for People
+</h1>
+<br>
+<form id="searchForm" asp-controller="Home" asp-action="Search" method="get" autocomplete="off">
+    <div class="autocomplete" onkeyup="return checkSubmit(event)">
+        <div id="searchColumnDiv">
+            <strong>Search by:</strong>
+            <select name="searchColumn" id="searchColumn">
+            <option value=""></option>
+            <option value="FirstName">FirstName</option> 
+            <option value="LastName">LastName</option>
+            <option value="City">City</option>
+            <option value="Occupation">Occupation</option>
+        </select>
+        </div>
+        <input spellcheck="true" id="searchBarID" type="text" placeholder="Search...." name="searchString" runat="server" value=@Model.SearchString>
+    </div>
+    <div class="submitBtn">
+        <input id="submitBtn" type="submit" value="Search">
+    </div>
+</form>
+
+<table id="people-table">
+    <thead>
+        <tr>
+            <th hidden="true">
+                @Html.DisplayNameFor(model => model.People[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.People[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.People[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.People[0].SIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.People[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.People[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.People[0].Occupation)
+            </th>
+        </tr>
+    </thead>
+    @if (Model != null && Model.People != null)
+    {
+        @foreach (var item in Model.People)
+        {
+            <tr>
+                <td hidden="true">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SIN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Occupation)
+                </td>
+            </tr>
+        }
+    }
+    <tbody>
+        
+    </tbody>
+</table>
+
+<script>
+    
+    var jsAutoCompleteArray = @Html.Raw(Json.Serialize(@Model.AutoCompleteArray));
+    autocomplete(document.getElementById("searchBarID"), jsAutoCompleteArray);
+    var searchColumn = String("@Model.SearchColumn");
+    AutoSelectDropDown("searchColumn", searchColumn);
+
+$(document).ready(function(){
+        $('#people-table').before('<div id="nav"></div>');
+        var rowsShown = 20;
+        var rowsTotal = $('#people-table tbody tr').length;
+        var numPages = rowsTotal/rowsShown;
+        for(i = 0;i < numPages;i++) {
+            var pageNum = i + 1;
+            $('#nav').append('<a href="#" rel="'+i+'">'+pageNum+'</a> ');
+        }
+        $('#people-table tbody tr').hide();
+        $('#people-table tbody tr').slice(0, rowsShown).show();
+        $('#nav a:first').addClass('active');
+        $('#nav a').bind('click', function(){
+
+            $('#nav a').removeClass('active');
+            $(this).addClass('active');
+            var currPage = $(this).attr('rel');
+            var startItem = currPage * rowsShown;
+            var endItem = startItem + rowsShown;
+            $('#people-table tbody tr').css('opacity','0.0').hide().slice(startItem, endItem).
+                    css('display','table-row').animate({opacity:1}, 300);
+        });
+    });
+</script>

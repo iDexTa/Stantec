@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r75cLqI8tKARJT0Z62ZGgaM080aanGA1EawTkJqRY5yV4ClI45gkE+rXXOIOw7glDVlWa/AElRY8CMecqRezUw==",
+  "success": true,
+  "projectFilePath": "D:\\Applications\\StantecSearchWebApp\\StantecSearchWebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dexta\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

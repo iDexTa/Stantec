@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: antiquewhite !important;
+}
+
+.navbar{
+  background-color: #333 !important;
+}
+
+.navbar a:hover{
+  background-color: #111;
+}
+
+.nav-link{
+  color: white !important;
+}
+
+a{
+  color: white !important;
+}
