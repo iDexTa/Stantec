@@ -41,10 +41,6 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    private void SetAutoCompleteArray(){
-        
-    }
-
     public async Task<HomeViewModel> GetListOfPeople(string keyword, string searchColumn)
     {
         using (var client = new HttpClient())
@@ -74,35 +70,37 @@ public class HomeController : Controller
         return View("~/Views/Home/Index.cshtml", homeVM);
     }
 
+#region HelperMethods
     private List<string> OccupationsCSV()
+    {
+        List<string> Occupations = new List<string>();
+        using (var reader = new StreamReader(@"Occupations.csv"))
         {
-            List<string> Occupations = new List<string>();
-            using (var reader = new StreamReader(@"Occupations.csv"))
+            while(!reader.EndOfStream)
             {
-                while(!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(line))
-                        Occupations.Add(line);
-                }
+                var line = reader.ReadLine();
+                if (!string.IsNullOrWhiteSpace(line))
+                    Occupations.Add(line);
             }
-
-            return Occupations;
         }
 
-        private List<string> CitiesCSV()
-        {
-            List<string> Cities = new List<string>();
-            using (var reader = new StreamReader(@"Cities.csv"))
-            {
-                while(!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(line))
-                        Cities.Add(line);
-                }
-            }
+        return Occupations;
+    }
 
-            return Cities;
+    private List<string> CitiesCSV()
+    {
+        List<string> Cities = new List<string>();
+        using (var reader = new StreamReader(@"Cities.csv"))
+        {
+            while(!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                if (!string.IsNullOrWhiteSpace(line))
+                    Cities.Add(line);
+            }
         }
+
+        return Cities;
+    }
+#endregion
 }

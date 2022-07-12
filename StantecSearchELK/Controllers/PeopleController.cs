@@ -95,7 +95,6 @@ namespace StantecSearchELK
 
         public void CreateData()
         {
-            // Need to gather and figure out a way of creating data.
             // This will be used to clear the data so it doesnt become over bearing when restarting this service over and over.
             if (elasticClient.Count<People>().Count > 0)
             {
@@ -126,7 +125,7 @@ namespace StantecSearchELK
                 person.Age = rng.Next(18, 99).ToString();
                 person.City = cityList[cityRNG];
                 person.SIN = rng.Next(0, 9).ToString() + rng.Next(0,9).ToString() + rng.Next(0,9).ToString() + "-" + rng.Next(0, 9).ToString() + rng.Next(0,9).ToString() + rng.Next(0,9).ToString() + "-" + rng.Next(0, 9).ToString() + rng.Next(0,9).ToString() + rng.Next(0,9).ToString();
-
+                
                 //inserting the person into the people index for ElasticSearch
                 var result = Post(person);
             }
