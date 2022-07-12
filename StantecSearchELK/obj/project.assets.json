@@ -2720,11 +2720,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Applications\\StantecSearchELK\\StantecSearchELK.csproj",
+      "projectUniqueName": "D:\\Applications\\Stantec\\StantecSearchELK\\StantecSearchELK.csproj",
       "projectName": "StantecSearchELK",
-      "projectPath": "D:\\Applications\\StantecSearchELK\\StantecSearchELK.csproj",
+      "projectPath": "D:\\Applications\\Stantec\\StantecSearchELK\\StantecSearchELK.csproj",
       "packagesPath": "C:\\Users\\dexta\\.nuget\\packages\\",
-      "outputPath": "D:\\Applications\\StantecSearchELK\\obj\\",
+      "outputPath": "D:\\Applications\\Stantec\\StantecSearchELK\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dexta\\AppData\\Roaming\\NuGet\\NuGet.Config"

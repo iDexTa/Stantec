@@ -97,3 +97,7 @@ input {
 #nav{
   margin-top: 20px;
 }
+
+.active{
+  color: black !important;
+}

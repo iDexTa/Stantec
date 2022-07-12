@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Applications\\StantecSearchWebApp\\StantecSearchWebApp.csproj",
+      "projectUniqueName": "D:\\Applications\\stantec\\StantecSearchWebApp\\StantecSearchWebApp.csproj",
       "projectName": "StantecSearchWebApp",
-      "projectPath": "D:\\Applications\\StantecSearchWebApp\\StantecSearchWebApp.csproj",
+      "projectPath": "D:\\Applications\\stantec\\StantecSearchWebApp\\StantecSearchWebApp.csproj",
       "packagesPath": "C:\\Users\\dexta\\.nuget\\packages\\",
-      "outputPath": "D:\\Applications\\StantecSearchWebApp\\obj\\",
+      "outputPath": "D:\\Applications\\stantec\\StantecSearchWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dexta\\AppData\\Roaming\\NuGet\\NuGet.Config"

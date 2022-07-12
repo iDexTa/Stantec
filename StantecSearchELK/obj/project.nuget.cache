@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/5adz0ey12x3gHFvRioXOh8bGx+2MBIAn466EorSgFfOBQ12iAzCO/p7nVmC4Pyc5qKajtETf15BqLDb9pZbGg==",
+  "dgSpecHash": "z17ufICQo9vw+0bJc4RNh602W+oOLXS1ttbySGc4Lrg+i4SpGSNnVJ0xTbuHxGkwbrnMbYuE3OHQ9sSNjzI26g==",
   "success": true,
-  "projectFilePath": "D:\\Applications\\StantecSearchELK\\StantecSearchELK.csproj",
+  "projectFilePath": "D:\\Applications\\Stantec\\StantecSearchELK\\StantecSearchELK.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dexta\\.nuget\\packages\\elasticsearch.net\\7.17.4\\elasticsearch.net.7.17.4.nupkg.sha512",
     "C:\\Users\\dexta\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
